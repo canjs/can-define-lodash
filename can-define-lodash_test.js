@@ -1,14 +1,14 @@
-import QUnit from 'steal-qunit';
-import plugin from './can-define-lodash';
-import DefineList from 'can-define/list/list';
-import DefineMap from 'can-define/map/map';
-import _ from 'lodash';
-import compute from 'can-compute';
+var QUnit = require('steal-qunit');
+var plugin = require('./can-define-lodash');
+var DefineList = require('can-define/list/list');
+var DefineMap = require('can-define/map/map');
+var _ = require('lodash');
+var compute = require('can-compute');
 
 QUnit.module('can-define-lodash');
 
 QUnit.test('Initialized the plugin', function(){
-	var list = new DefineList(["a","b","c"]);
+	var list = new DefineList(["a","b","c","d"]);
 
 	var head = compute(function(){
 		return _.head(list);
@@ -18,24 +18,27 @@ QUnit.test('Initialized the plugin', function(){
 		return _.last(list);
 	});
 
-	QUnit.equal(last(), "c");
+	QUnit.equal(last(), "d");
 
 	last.on("change", function(ev, newVal){
+		QUnit.equal(newVal, "c");
+	});
+
+	head.on("change", function(ev, newVal){
 		QUnit.equal(newVal, "b");
 	});
 
+	list.shift();
 	list.pop();
 });
 
 
-QUnit.test('_.value', 2, function(){
+QUnit.test('_.values', 2, function(){
 	var map = new DefineMap({a: 1, b: 2});
 
 	var values = compute(function(){
-		debugger;
 		return _.values(map);
 	});
-
 
 	QUnit.deepEqual(values(), [1,2]);
 
