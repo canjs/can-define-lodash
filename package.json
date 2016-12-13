@@ -48,7 +48,7 @@
     "npmAlgorithm": "flat"
   },
   "dependencies": {
-    "can-define": "^0.8.3",
+    "can-define": "^1.0.5",
     "lodash": "^4.16.3"
   },
   "devDependencies": {
@@ -61,6 +61,6 @@
     "steal": "^0.16.0",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.16.0",
-    "testee": "^0.2.4"
+    "testee": "^0.3.0"
   }
 }
