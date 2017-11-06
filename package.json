@@ -55,7 +55,7 @@
     "can-compute": "^3.0.0-pre.15",
     "documentjs": "^0.4.2",
     "done-serve": "^0.3.0-pre.0",
-    "donejs-cli": "^0.10.0-pre.0",
+    "donejs-cli": "^1.1.0",
     "generator-donejs": "^0.10.0-pre.0",
     "jshint": "^2.9.1",
     "steal": "^0.16.0",
