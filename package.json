@@ -52,7 +52,7 @@
     "lodash": "^4.16.3"
   },
   "devDependencies": {
-    "can-compute": "^3.0.0-pre.15",
+    "can-compute": "^3.3.10",
     "documentjs": "^0.4.2",
     "done-serve": "^0.3.0-pre.0",
     "donejs-cli": "^0.10.0-pre.0",
