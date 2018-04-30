@@ -48,7 +48,7 @@
     "npmAlgorithm": "flat"
   },
   "dependencies": {
-    "can-define": "^1.0.5",
+    "can-define": "^2.2.2",
     "lodash": "^4.16.3"
   },
   "devDependencies": {
