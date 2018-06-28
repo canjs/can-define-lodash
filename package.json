@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "can-compute": "^3.0.0-pre.15",
-    "documentjs": "^0.4.2",
+    "documentjs": "^0.5.4",
     "done-serve": "^0.3.0-pre.0",
     "donejs-cli": "^0.10.0-pre.0",
     "generator-donejs": "^0.10.0-pre.0",
