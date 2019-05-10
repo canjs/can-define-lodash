@@ -7,7 +7,7 @@ var compute = require('can-compute');
 
 QUnit.module('can-define-lodash');
 
-QUnit.test('Initialized the plugin', function(){
+QUnit.test('Initialized the plugin', function(assert) {
 	var list = new DefineList(["a","b","c","d"]);
 
 	var head = compute(function(){
@@ -18,14 +18,14 @@ QUnit.test('Initialized the plugin', function(){
 		return _.last(list);
 	});
 
-	QUnit.equal(last(), "d");
+	assert.equal(last(), "d");
 
 	last.on("change", function(ev, newVal){
-		QUnit.equal(newVal, "c");
+		assert.equal(newVal, "c");
 	});
 
 	head.on("change", function(ev, newVal){
-		QUnit.equal(newVal, "b");
+		assert.equal(newVal, "b");
 	});
 
 	list.shift();
@@ -33,17 +33,17 @@ QUnit.test('Initialized the plugin', function(){
 });
 
 
-QUnit.test('_.values', 2, function(){
+QUnit.test('_.values', 2, function(assert) {
 	var map = new DefineMap({a: 1, b: 2});
 
 	var values = compute(function(){
 		return _.values(map);
 	});
 
-	QUnit.deepEqual(values(), [1,2]);
+	assert.deepEqual(values(), [1,2]);
 
 	values.on("change", function(ev, newVal){
-		QUnit.deepEqual(newVal, [1,2,3]);
+		assert.deepEqual(newVal, [1,2,3]);
 	});
 
 	map.set("c",3);
